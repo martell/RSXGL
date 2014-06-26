@@ -16,8 +16,8 @@ else
 AC_MSG_NOTICE([location of PSL1GHT SDK is "${PSL1GHT}"])
 fi
 
-PSL1GHT_CPPFLAGS="-I${PSL1GHT}/ppu/include"
-PSL1GHT_LDFLAGS="-L${PSL1GHT}/ppu/lib"
+PSL1GHT_CPPFLAGS="-I${PSL1GHT}/powerpc64-ps3-elf/include"
+PSL1GHT_LDFLAGS="-L${PSL1GHT}/powerpc64-ps3-elf/lib"
 
 AC_SUBST([PSL1GHT])
 AC_SUBST([PSL1GHT_CPPFLAGS])

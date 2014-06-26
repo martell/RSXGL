@@ -5,7 +5,7 @@ AC_ARG_WITH([ps3dev],AS_HELP_STRING([--with-ps3dev],[location of PS3 homebrew de
 AC_ARG_VAR([PS3DEV],[location of PS3 homebrew development environment])
 export PS3DEV
 
-PS3DEV=${PS3DEV:-"/usr/local/ps3dev"}
+PS3DEV=${PS3DEV:-"/ps3"}
 
 AC_MSG_NOTICE([location of PS3 homebrew development environment is "${PS3DEV}"])
 

@@ -37,34 +37,34 @@ AC_PATH_PROG([PWDCMD],[pwd])
 AC_PATH_PROG([RSYNC],[rsync])
 AC_PATH_PROG([PATCH],[patch])
 AC_PATH_PROG([XXD],[xxd])
-AC_PATH_PROG([PYTHON],[python])
+AC_PATH_PROG([PYTHON],[/usr/bin/python2])
 
 AC_LANG([C])
 AC_LANG([C++])
 
 # Get the PS3DEV environment variable:
 AC_PS3DEV
-AC_PREFIX_DEFAULT([${PS3DEV}/ppu])
+AC_PREFIX_DEFAULT([${PS3DEV}/powerpc64-ps3-elf])
 
 # Find psl1ght:
 AC_PSL1GHT
 
 # PPU tools:
-AC_TOOLCHAIN([ppu],[ppu],[${PS3DEV}/ppu/bin],[${PS3DEV}/ppu/lib/pkgconfig])
+AC_TOOLCHAIN([ppu],[powerpc64-ps3-elf],[${PS3DEV}/powerpc64-ps3-elf/bin],[${PS3DEV}/powerpc64-ps3-elf/lib/pkgconfig])
 
 if test "${prefix}" == "NONE"; then
-default_ppuprefix="${PS3DEV}/ppu"
+default_ppuprefix="${PS3DEV}/powerpc64-ps3-elf"
 else
-default_ppuprefix="${prefix}/ppu"
+default_ppuprefix="${prefix}/powerpc64-ps3-elf"
 fi
 
 AC_TOOLCHAIN_PREFIX([ppu],[${default_ppuprefix}])
 AC_TOOLCHAIN_PROG_CC([ppu])
 AC_TOOLCHAIN_PROG_CXX([ppu])
-AC_TOOLCHAIN_PATH_TOOL([ppu],[AR],[ar])
-AC_TOOLCHAIN_PATH_TOOL([ppu],[RANLIB],[ranlib])
-AC_TOOLCHAIN_PATH_TOOL([ppu],[AS],[as])
-AC_TOOLCHAIN_PATH_TOOL([ppu],[STRIP],[strip])
+AC_TOOLCHAIN_PATH_TOOL([ppu],[AR],[powerpc64-ps3-elf-ar])
+AC_TOOLCHAIN_PATH_TOOL([ppu],[RANLIB],[powerpc64-ps3-elf-ranlib])
+AC_TOOLCHAIN_PATH_TOOL([ppu],[AS],[powerpc64-ps3-elf-as])
+AC_TOOLCHAIN_PATH_TOOL([ppu],[STRIP],[powerpc64-ps3-elf-strip])
 
 AC_PSL1GHT_PATH_PROGS
 AC_PSL1GHT_CHECK_HEADERS
@@ -148,7 +148,7 @@ AC_MSG_NOTICE([path to the lftp utility is ${LFTP}])
 
 # Look for libraries normally stored under "${PS3DEV}/portlibs"
 AC_ARG_VAR([ppu_portlibs_PKG_CONFIG_PATH],[pkg-config search paths for PS3 ported libraries (default is "${PS3DEV}/portlibs/ppu/lib/pkgconfig")])
-ppu_portlibs_PKG_CONFIG_PATH=${ppu_portlibs_PKG_CONFIG_PATH:-"${PS3DEV}/portlibs/ppu/lib/pkgconfig"}
+ppu_portlibs_PKG_CONFIG_PATH=${ppu_portlibs_PKG_CONFIG_PATH:-"${PS3DEV}/powerpc64-ps3-elf/lib/pkgconfig"}
 AC_MSG_NOTICE([pkg-config search paths for PPU ported libraries are "${ppu_portlibs_PKG_CONFIG_PATH}"])
 
 # Look for libpng:
