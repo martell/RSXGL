@@ -61,10 +61,10 @@ fi
 AC_TOOLCHAIN_PREFIX([ppu],[${default_ppuprefix}])
 AC_TOOLCHAIN_PROG_CC([ppu])
 AC_TOOLCHAIN_PROG_CXX([ppu])
-AC_TOOLCHAIN_PATH_TOOL([ppu],[AR],[powerpc64-ps3-elf-ar])
-AC_TOOLCHAIN_PATH_TOOL([ppu],[RANLIB],[powerpc64-ps3-elf-ranlib])
-AC_TOOLCHAIN_PATH_TOOL([ppu],[AS],[powerpc64-ps3-elf-as])
-AC_TOOLCHAIN_PATH_TOOL([ppu],[STRIP],[powerpc64-ps3-elf-strip])
+AC_TOOLCHAIN_PATH_TOOL([ppu],[AR],[ar])
+AC_TOOLCHAIN_PATH_TOOL([ppu],[RANLIB],[ranlib])
+AC_TOOLCHAIN_PATH_TOOL([ppu],[AS],[as])
+AC_TOOLCHAIN_PATH_TOOL([ppu],[STRIP],[strip])
 
 AC_PSL1GHT_PATH_PROGS
 AC_PSL1GHT_CHECK_HEADERS
